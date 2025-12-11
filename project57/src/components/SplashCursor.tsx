@@ -54,15 +54,15 @@ function pointerPrototype(): Pointer {
 
 export default function SplashCursor({
   SIM_RESOLUTION = 128,
-  DYE_RESOLUTION = 100,
+  DYE_RESOLUTION = 1080,
   CAPTURE_RESOLUTION = 512,
-  DENSITY_DISSIPATION = 3.5,
+  DENSITY_DISSIPATION = 4.0, // AUMENTAR (era 3.5). Faz a cor sumir mais rápido.
   VELOCITY_DISSIPATION = 2,
   PRESSURE = 0.1,
   PRESSURE_ITERATIONS = 20,
   CURL = 3,
-  SPLAT_RADIUS = 0.2,
-  SPLAT_FORCE = 6000,
+  SPLAT_RADIUS = 0.08, // DIMINUIR BASTANTE (era 0.2). Define o tamanho da "bola".
+  SPLAT_FORCE = 500, // DIMINUIR DRASTICAMENTE (era 6000). Evita o centro branco.
   SHADING = true,
   COLOR_UPDATE_SPEED = 0,
   BACK_COLOR = { r: 0.5, g: 0, b: 0 },
@@ -1359,11 +1359,19 @@ export default function SplashCursor({
     }
 
     function generateColor(): ColorRGB {
-      const c = HSVtoRGB(Math.random(), 1.0, 1.0);
-      c.r *= 0.15;
-      c.g *= 0.15;
-      c.b *= 0.15;
-      return c;
+      const hex = "#76C066";
+
+      const r = parseInt(hex.slice(1, 3), 16) / 255;
+      const g = parseInt(hex.slice(3, 5), 16) / 255;
+      const b = parseInt(hex.slice(5, 7), 16) / 255;
+
+      const intensidade = 0.3;
+
+      return {
+        r: r * intensidade,
+        g: g * intensidade,
+        b: b * intensidade,
+      };
     }
 
     function HSVtoRGB(h: number, s: number, v: number): ColorRGB {
