@@ -1,20 +1,23 @@
 import Image from "next/image";
+import MandalaBackground from "@/components/MandalaBackground";
 
 export default function Home() {
   return (
-    <div style={{ position: "relative" }}>
-      <main style={{ position: "relative" }}>
-        <h1 style={{ color: "white" }}>Project 57</h1>
-        <p style={{ color: "white" }}>
-          A visual portifolio and blog by Luca Villela
-        </p>
-      </main>
+    <div
+      style={{
+        position: "relative",
+        width: "100vw",
+        height: "100vh",
+        margin: "0px",
+      }}
+    >
+      <MandalaBackground />
 
       <div
         style={{
           position: "fixed",
-          height: "100vh",
-          width: "100vw",
+          height: "100%",
+          width: "100%",
           overflow: "hidden",
           zIndex: -2,
           top: 0,
@@ -22,7 +25,7 @@ export default function Home() {
         }}
       >
         <Image
-          src="/homeBackground.jpg"
+          src="/greenBackground.png"
           alt="Background Image"
           fill
           style={{
