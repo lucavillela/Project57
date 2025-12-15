@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-green: #2c3c20;
+  --color-brand-darkgreen: #202b17;
+  --color-brand-cream: #f6f2ea;
+
+  --font-family-serif: var(--font-cormorant), serif;
+  --font-family-cormorant: var(--font-cormorant), serif;
+}
+
+@layer components {
+  .text-shadow-lg {
+    text-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@layer utilities {
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes bounce-down {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(12px);
+    }
+  }
+
+  .animate-fadeInDown {
+    animation: fadeInDown 2s ease-in-out;
+  }
+
+  .animate-fadeInUp {
+    animation: fadeInUp 1.2s ease-in-out;
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  .animate-bounce-down {
+    animation: bounce-down 2s infinite;
+  }
+}
+
+body {
+  font-family: var(--font-cormorant), serif;
+  margin: 0px;
+  padding: 0px;
+}
