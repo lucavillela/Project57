@@ -1,12 +1,16 @@
-:root {
-  --foreground-rgb: 246, 242, 234;
-  --background-start-rgb: 145, 0, 116;
+@import "tailwindcss";
+
+@theme {
+  --color-brand-green: #2c3c20;
+  --color-brand-darkgreen: #202b17;
+  --color-brand-cream: #f6f2ea;
+
+  --font-family-serif: var(--font-cormorant), serif;
+  --font-family-cormorant: var(--font-cormorant), serif;
 }
 
 body {
-  background-color: #202b17;
-  color: #f6f2ea;
   font-family: var(--font-cormorant), serif;
-  padding: 0;
-  margin: 0;
+  margin: 0px;
+  padding: 0px;
 }

@@ -10,7 +10,7 @@ const MandalaBackground: React.FC = () => {
 
   const FADE_SPEED = 0.05;
 
-  const DRAW_COLORS = ["#202b17", "#2c3c20"];
+  const DRAW_COLORS = ["#f6f2ea", "#f6f2ea"];
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -26,8 +26,14 @@ const MandalaBackground: React.FC = () => {
     let lastMouse = { x: 0, y: 0 };
 
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      const parent = canvas.parentElement;
+      if (parent) {
+        canvas.width = parent.clientWidth;
+        canvas.height = parent.clientHeight;
+      } else {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
     };
 
     window.addEventListener("resize", resizeCanvas);
@@ -123,7 +129,7 @@ const MandalaBackground: React.FC = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed top-0 left-0 w-screen h-screen -z-10 pointer-events-none"
+      className="pointer-events-none"
       style={{ background: "transparent" }}
     />
   );
