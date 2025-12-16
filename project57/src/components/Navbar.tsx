@@ -5,20 +5,34 @@ import React from "react";
 const Navbar: React.FC = () => {
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Curriculum", href: "/portfolio" },
+    { name: "Curriculum", href: "#curriculum" },
     { name: "Projects", href: "/blog" },
     { name: "Blog", href: "/blog" },
   ];
+
+  const handleSmoothScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  };
 
   return (
     <nav className="h-[6vh] w-full bg-brand-cream text-brand-darkgreen flex items-center justify-between px-8 border-b border-b-2 border-brand-cream animate-fadeIn">
       <div className="text-[40px] font-extrabold">57</div>
 
-      <div className="flex gap-6 font-bold">
+      <div className="flex gap-6 font-bold text-lg">
         {navLinks.map((link) => (
           <a
             key={link.name}
             href={link.href}
+            onClick={(e) => handleSmoothScroll(e, link.href)}
             className="relative inline-block group"
           >
             {link.name}
