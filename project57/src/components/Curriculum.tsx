@@ -43,7 +43,7 @@ const Curriculum = () => {
       icon: <GraduationCap className="w-6 h-6" />,
       content: (
         <div className="space-y-4">
-          <p className="text-xl text-brand-darkgreen leading-relaxed font-semibold hover:text-gray-950 transition-colors duration-200">
+          <p className="font-source-serif text-lg text-brand-darkgreen leading-relaxed font-normal hover:text-gray-950 transition-colors duration-200">
             Computer Engineering final-year student with international
             experience in Germany and solid computer science background.
             Practical experience in Full-stack development, Docker, Data
@@ -53,13 +53,13 @@ const Curriculum = () => {
           <div className="space-y-3">
             <div className="flex items-center gap-3 text-gray-800 hover:text-brand-darkgreen transition-colors duration-200 cursor-default">
               <MapPin className="w-5 h-5 text-brand-darkgreen flex-shrink-0" />
-              <span className="text-lg font-medium">Salvador, Brazil 🇧🇷</span>
+              <span className="text-md">Salvador, Brazil 🇧🇷</span>
             </div>
             <div className="flex items-center gap-3 text-gray-800 group">
               <Mail className="w-5 h-5 text-brand-darkgreen flex-shrink-0 group-hover:animate-pulse" />
               <a
                 href="mailto:lucatvillela@gmail.com"
-                className="text-lg font-medium hover:text-brand-darkgreen transition-colors duration-200 hover:underline underline-offset-2"
+                className="text-md hover:text-brand-darkgreen transition-colors duration-200 hover:underline underline-offset-2"
               >
                 lucatvillela@gmail.com
               </a>
@@ -72,7 +72,7 @@ const Curriculum = () => {
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-brand-darkgreen hover:text-brand-darkgreen bg-brand-cream hover:bg-brand-cream px-4 py-2 rounded-lg transition-all duration-300 font-semibold hover:shadow-lg hover:scale-101 transform text-sm border-2 border-brand-cream hover:border-brand-darkgreen"
             >
-              <Github className="w-5 h-5" />
+              <Github className="w-5 h-5 " />
               GitHub
             </a>
             <a
@@ -95,7 +95,7 @@ const Curriculum = () => {
       content: (
         <div className="space-y-6">
           <div>
-            <h4 className="text-xl font-bold text-brand-darkgreen mb-3 text-lg">
+            <h4 className="text-lg font-semibold text-brand-darkgreen mb-3 text-lg">
               Programming Languages
             </h4>
             <div className="flex flex-wrap gap-2">
@@ -103,7 +103,7 @@ const Curriculum = () => {
                 (skill) => (
                   <span
                     key={skill}
-                    className="text-[16px] px-4 py-2 bg-blue-100 text-blue-900 font-semibold rounded-full text-sm"
+                    className="text-md px-4 py-2 bg-blue-100 text-blue-900 font-semibold rounded-full text-sm"
                   >
                     {skill}
                   </span>
@@ -112,7 +112,7 @@ const Curriculum = () => {
             </div>
           </div>
           <div>
-            <h4 className="text-xl font-bold text-brand-darkgreen mb-3 text-lg">
+            <h4 className="text-lg font-semibold text-brand-darkgreen mb-3 text-lg">
               Frameworks & Tools
             </h4>
             <div className="flex flex-wrap gap-2">
@@ -127,7 +127,7 @@ const Curriculum = () => {
               ].map((skill) => (
                 <span
                   key={skill}
-                  className="text-[16px] px-4 py-2 bg-green-100 text-green-900 font-semibold rounded-full text-sm"
+                  className="text-md px-4 py-2 bg-green-100 text-green-900 font-semibold rounded-full text-sm"
                 >
                   {skill}
                 </span>
@@ -135,7 +135,7 @@ const Curriculum = () => {
             </div>
           </div>
           <div>
-            <h4 className="text-xl font-bold text-brand-darkgreen mb-3 text-lg">
+            <h4 className="text-lg font-semibold text-brand-darkgreen mb-3 text-lg">
               Areas of Interest and Knowledge
             </h4>
             <div className="flex flex-wrap gap-2">
@@ -147,7 +147,7 @@ const Curriculum = () => {
               ].map((skill) => (
                 <span
                   key={skill}
-                  className="text-[16px] px-4 py-2 bg-purple-100 text-purple-900 font-semibold rounded-full text-sm"
+                  className="text-md px-4 py-2 bg-purple-100 text-purple-900 font-semibold rounded-full text-sm"
                 >
                   {skill}
                 </span>
@@ -155,14 +155,14 @@ const Curriculum = () => {
             </div>
           </div>
           <div>
-            <h4 className="text-xl font-bold text-brand-darkgreen mb-3 text-lg">
+            <h4 className="text-lg font-semibold text-brand-darkgreen mb-3 text-lg">
               Other Tools
             </h4>
             <div className="flex flex-wrap gap-2">
               {["Power BI", "Power Automate", "Power Apps"].map((skill) => (
                 <span
                   key={skill}
-                  className="text-[16px] px-4 py-2 bg-amber-100 text-amber-900 font-semibold rounded-full text-sm"
+                  className="text-md px-4 py-2 bg-amber-100 text-amber-900 font-semibold rounded-full text-sm"
                 >
                   {skill}
                 </span>
@@ -178,14 +178,14 @@ const Curriculum = () => {
       icon: <Briefcase className="w-6 h-6" />,
       content: (
         <div className="space-y-8">
-          <div className="border-l-4 border-brand-darkgreen pl-6">
-            <h4 className="font-bold text-brand-darkgreen text-2xl mb-1">
+          <div className="border-l-4  pl-6">
+            <h4 className="font-semibold text-brand-darkgreen text-xl mb-1">
               Research Assistant — Software Developer
             </h4>
-            <p className="text-lg text-gray-700 font-semibold mb-1">
+            <p className="text-lg text-gray-700 font-medium mb-1">
               Fraunhofer Institute for Production Technology IPT
             </p>
-            <p className="text-md text-gray-700 font-semibold mb-4">
+            <p className="text-md text-gray-700 font-medium mb-4">
               Aachen, Germany 🇩🇪 • 07/2024 – 07/2025
             </p>
             <ul className="space-y-3 text-gray-800">
@@ -193,7 +193,7 @@ const Curriculum = () => {
                 <span className="text-brand-darkgreen mt-1 flex-shrink-0 font-bold">
                   •
                 </span>
-                <span className="text-lg font-medium leading-relaxed">
+                <span className="text-md font-normal leading-relaxed">
                   Developed <span className="font-bold">Angular</span> web
                   applications used to demonstrate research results to partners
                   and industry.
@@ -203,7 +203,7 @@ const Curriculum = () => {
                 <span className="text-brand-darkgreen mt-1 flex-shrink-0 font-bold">
                   •
                 </span>
-                <span className="text-lg font-medium leading-relaxed">
+                <span className="text-md font-medium leading-relaxed">
                   Implemented{" "}
                   <span className="font-bold">MQTT communication</span> with
                   microcontrollers, enabling real-time monitoring of experiments
@@ -214,7 +214,7 @@ const Curriculum = () => {
                 <span className="text-brand-darkgreen mt-1 flex-shrink-0 font-bold">
                   •
                 </span>
-                <span className="text-lg font-medium leading-relaxed">
+                <span className="text-md font-medium leading-relaxed">
                   Containerized systems with{" "}
                   <span className="font-bold">Docker</span>, ensuring
                   reproducible environments and facilitating deployment.
@@ -224,7 +224,7 @@ const Curriculum = () => {
                 <span className="text-brand-darkgreen mt-1 flex-shrink-0 font-bold">
                   •
                 </span>
-                <span className="text-lg font-medium leading-relaxed">
+                <span className="text-md font-medium leading-relaxed">
                   Researched{" "}
                   <span className="font-bold">5G network technologies</span> and
                   contributed to prototypes involving edge computing.
@@ -234,7 +234,7 @@ const Curriculum = () => {
                 <span className="text-brand-darkgreen mt-1 flex-shrink-0 font-bold">
                   •
                 </span>
-                <span className="text-lg font-medium leading-relaxed">
+                <span className="text-md font-medium leading-relaxed">
                   Managed <span className="font-bold">virtual machines</span>{" "}
                   and <span className="font-bold">Linux systems</span> used in
                   experiments and internal tools.
@@ -244,7 +244,7 @@ const Curriculum = () => {
                 <span className="text-brand-darkgreen mt-1 flex-shrink-0 font-bold">
                   •
                 </span>
-                <span className="text-lg font-medium leading-relaxed">
+                <span className="text-md font-medium leading-relaxed">
                   Collaborated with multicultural teams using{" "}
                   <span className="font-bold">Git</span> and{" "}
                   <span className="font-bold">agile methodologies</span>.
@@ -254,13 +254,13 @@ const Curriculum = () => {
           </div>
 
           <div className="border-l-4 border-brand-darkgreen pl-6">
-            <h4 className="font-bold text-brand-darkgreen text-2xl mb-1">
+            <h4 className="font-semibold text-brand-darkgreen text-xl mb-1">
               Data Science & Software Development Intern
             </h4>
-            <p className="text-lg text-gray-700 font-semibold mb-1">
+            <p className="text-lg text-gray-700 font-medium mb-1">
               Bahia Court of Justice
             </p>
-            <p className="text-md text-gray-700 font-semibold mb-4">
+            <p className="text-md text-gray-700 font-medium mb-4">
               Salvador, Brazil 🇧🇷 • 01/2024 – 06/2024
             </p>
             <ul className="space-y-3 text-gray-800">
@@ -268,7 +268,7 @@ const Curriculum = () => {
                 <span className="text-brand-darkgreen mt-1 flex-shrink-0 font-bold">
                   •
                 </span>
-                <span className="text-lg font-medium leading-relaxed">
+                <span className="text-md font-medium leading-relaxed">
                   Developed{" "}
                   <span className="font-bold">Power BI dashboards</span> used by
                   administrative departments to support decision-making.
@@ -278,7 +278,7 @@ const Curriculum = () => {
                 <span className="text-brand-darkgreen mt-1 flex-shrink-0 font-bold">
                   •
                 </span>
-                <span className="text-lg font-medium leading-relaxed">
+                <span className="text-md font-medium leading-relaxed">
                   Automated manual processes using{" "}
                   <span className="font-bold">Power Apps</span> and{" "}
                   <span className="font-bold">Power Automate</span>, increasing
@@ -289,7 +289,7 @@ const Curriculum = () => {
                 <span className="text-brand-darkgreen mt-1 flex-shrink-0 font-bold">
                   •
                 </span>
-                <span className="text-lg font-medium leading-relaxed">
+                <span className="text-md font-medium leading-relaxed">
                   Created internal <span className="font-bold">C#</span>{" "}
                   applications to replace third-party tools, ensuring
                   technological independence.
@@ -299,7 +299,7 @@ const Curriculum = () => {
                 <span className="text-brand-darkgreen mt-1 flex-shrink-0 font-bold">
                   •
                 </span>
-                <span className="text-lg font-medium leading-relaxed">
+                <span className="text-md font-medium leading-relaxed">
                   Delivered solutions aligned with court standards, contributing
                   to agility and service quality.
                 </span>
@@ -308,13 +308,11 @@ const Curriculum = () => {
           </div>
 
           <div className="border-l-4 border-brand-darkgreen pl-6">
-            <h4 className="font-bold text-brand-darkgreen text-2xl mb-1">
+            <h4 className="font-semibold text-brand-darkgreen text-xl mb-1">
               Software Development Intern
             </h4>
-            <p className="text-lg text-gray-700 font-semibold mb-1">
-              In9 Mídia
-            </p>
-            <p className="text-md text-gray-700 font-semibold mb-4">
+            <p className="text-lg text-gray-700 font-medium mb-1">In9 Mídia</p>
+            <p className="text-md text-gray-700 font-medium mb-4">
               Salvador, Brazil 🇧🇷 • 03/2023 – 12/2023
             </p>
             <ul className="space-y-3 text-gray-800">
@@ -322,7 +320,7 @@ const Curriculum = () => {
                 <span className="text-brand-darkgreen mt-1 flex-shrink-0 font-bold">
                   •
                 </span>
-                <span className="text-lg font-medium leading-relaxed">
+                <span className="text-md font-medium leading-relaxed">
                   Modeled and managed databases with{" "}
                   <span className="font-bold">PostgreSQL</span> for production
                   applications.
@@ -332,7 +330,7 @@ const Curriculum = () => {
                 <span className="text-brand-darkgreen mt-1 flex-shrink-0 font-bold">
                   •
                 </span>
-                <span className="text-lg font-medium leading-relaxed">
+                <span className="text-md font-medium leading-relaxed">
                   Used <span className="font-bold">Docker</span> to facilitate
                   development, integration, and deployment.
                 </span>
@@ -341,18 +339,17 @@ const Curriculum = () => {
                 <span className="text-brand-darkgreen mt-1 flex-shrink-0 font-bold">
                   •
                 </span>
-                <span className="text-lg font-medium leading-relaxed">
-                  Developed full-stack applications with{" "}
+                <span className="text-md font-medium leading-relaxed">
+                  Developed applications with{" "}
                   <span className="font-bold">Node.js</span> and{" "}
-                  <span className="font-bold">React</span>, integrating critical
-                  features.
+                  <span className="font-bold">React</span>.
                 </span>
               </li>
               <li className="flex gap-3">
                 <span className="text-brand-darkgreen mt-1 flex-shrink-0 font-bold">
                   •
                 </span>
-                <span className="text-lg font-medium leading-relaxed">
+                <span className="text-md font-medium leading-relaxed">
                   Implemented <span className="font-bold">RESTful APIs</span>{" "}
                   and optimized existing endpoints.
                 </span>
@@ -369,13 +366,13 @@ const Curriculum = () => {
       content: (
         <div className="space-y-8">
           <div className="border-l-4 border-brand-darkgreen pl-6">
-            <h4 className="font-bold text-brand-darkgreen text-2xl mb-1">
+            <h4 className="font-semibold text-brand-darkgreen text-xl mb-1">
               Bachelor's Degree in Computer Engineering
             </h4>
-            <p className="text-base text-gray-700 font-semibold mb-1">
+            <p className="text-base text-gray-700 font-medium mb-1">
               SENAI CIMATEC University
             </p>
-            <p className="text-base text-gray-600 mb-2">
+            <p className="text-base text-gray-600 mb-1">
               Salvador, Brazil • In Progress
             </p>
             <p className="text-gray-800 text-base font-medium">
@@ -435,7 +432,7 @@ const Curriculum = () => {
                 <div className="text-brand-darkgreen group-hover:scale-125 group-hover:text-brand-darkgreen/80 transition-all duration-300">
                   {section.icon}
                 </div>
-                <h3 className="text-xl font-bold text-brand-darkgreen group-hover:text-opacity-80 text-left transition-all duration-200">
+                <h3 className="text-2xl font-extrabold text-brand-darkgreen group-hover:text-opacity-80 text-left transition-all duration-200">
                   {section.title}
                 </h3>
               </div>
