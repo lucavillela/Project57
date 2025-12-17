@@ -5,8 +5,18 @@
   --color-brand-darkgreen: #202b17;
   --color-brand-cream: #f6f2ea;
 
-  --font-family-serif: var(--font-cormorant), serif;
   --font-family-cormorant: var(--font-cormorant), serif;
+  --font-family-source-serif: var(--font-source-serif), serif;
+}
+
+@layer utilities {
+  .font-cormorant {
+    @apply font-[family-name:var(--font-cormorant),serif];
+  }
+
+  .font-source-serif {
+    @apply font-[family-name:var(--font-source-serif),serif];
+  }
 }
 
 @layer components {
@@ -75,7 +85,7 @@
 }
 
 body {
-  font-family: var(--font-cormorant), serif;
+  font-family: var(--font-source-serif), serif;
   margin: 0px;
   padding: 0px;
 }

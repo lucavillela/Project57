@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
       <div className="text-[40px] font-extrabold">57</div>
 
       {/* Desktop Menu */}
-      <div className="hidden md:flex gap-6 font-bold text-lg">
+      <div className="hidden md:flex gap-6 font-semibold text-lg">
         {navLinks.map((link) => (
           <a
             key={link.name}

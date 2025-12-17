@@ -22,10 +22,10 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
-          <h1 className="text-[105px] font-bold text-brand-cream text-shadow-lg animate-fadeInUp max-sm:text-[90px]">
+          <h1 className="font-cormorant text-[105px] font-[700] text-brand-cream text-shadow-lg animate-fadeInUp max-sm:text-[80px]">
             Project 57
           </h1>
-          <p className="text-xl md:text-2xl text-brand-cream italic text-shadow-xs animate-fadeInUp">
+          <p className="font-[300] text-3xl text-brand-cream italic text-shadow-xs animate-fadeInUp max-sm:text-[25px]">
             A blog and visual portfolio by Luca Torres Villela
           </p>
           <div
@@ -50,7 +50,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex itens-center justify-center w-full min-h-[100vh] bg-brand-darkgreen -mt-5 relative z-10">
+      <div className="flex itens-center justify-center w-full bg-brand-darkgreen -mt-5 relative z-10">
         <Image
           src="/greenBackground.png"
           alt="Background"
@@ -58,8 +58,8 @@ export default function Home() {
           loading="eager"
           className="object-cover -z-20"
         />
-        <div className="flex flex-col items-center justify-center h-full w-fit bg-brand-cream rounded-t-3xl -mt-5 relative z-20 px-8 py-8 max-sm:px-3 max-sm:w-full">
-          <h1 className="text-[60px] font-bold text-brand-darkgreen mb-6 max-sm:text-[40px] max-sm:text-center">
+        <div className="flex flex-col items-center justify-center h-full w-fit min-sm:min-w-[700px] bg-brand-cream rounded-t-3xl -mt-5 relative z-20 px-8 py-8 max-sm:px-3 max-sm:w-full">
+          <h1 className="font-cormorant text-[60px] font-bold text-brand-darkgreen mb-6 max-sm:text-[40px] max-sm:text-center">
             Curriculum
           </h1>
           <Curriculum />
