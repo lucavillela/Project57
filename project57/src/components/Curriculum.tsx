@@ -44,10 +44,11 @@ const Curriculum = () => {
       content: (
         <div className="space-y-4">
           <p className="text-xl text-brand-darkgreen leading-relaxed font-semibold hover:text-gray-950 transition-colors duration-200">
-            Computer Engineering undergraduate with international experience in
-            Germany and solid computer science background. Practical experience
-            in Full-stack development, Docker containerization, Data Science,
-            and Machine Learning.
+            Computer Engineering final-year student with international
+            experience in Germany and solid computer science background.
+            Practical experience in Full-stack development, Docker, Data
+            Science, and Machine Learning. Looking to leverage this experience
+            in Data Science or Software Engineering roles.
           </p>
           <div className="space-y-3">
             <div className="flex items-center gap-3 text-gray-800 hover:text-brand-darkgreen transition-colors duration-200 cursor-default">
@@ -142,7 +143,6 @@ const Curriculum = () => {
                 "Full-stack Development",
                 "Databases",
                 "Linux",
-                "Automation",
                 "Machine Learning",
               ].map((skill) => (
                 <span
@@ -399,14 +399,14 @@ const Curriculum = () => {
           to {
             opacity: 1;
             transform: translateY(0);
-            max-height: 1000px;
+            max-height: 2000px;
           }
         }
         @keyframes slideUp {
           from {
             opacity: 1;
             transform: translateY(0);
-            max-height: 1000px;
+            max-height: 2000px;
           }
           to {
             opacity: 0;

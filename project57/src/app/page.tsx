@@ -58,8 +58,8 @@ export default function Home() {
           loading="eager"
           className="object-cover -z-20"
         />
-        <div className=" h-full w-fit bg-brand-cream rounded-t-3xl -mt-5 relative z-20 px-8 py-8 md:px-12">
-          <h1 className="text-[60px] font-bold text-brand-darkgreen mb-6 max-sm:text-[40px]">
+        <div className="flex flex-col items-center justify-center h-full w-fit bg-brand-cream rounded-t-3xl -mt-5 relative z-20 px-8 py-8 max-sm:px-3 max-sm:w-full">
+          <h1 className="text-[60px] font-bold text-brand-darkgreen mb-6 max-sm:text-[40px] max-sm:text-center">
             Curriculum
           </h1>
           <Curriculum />
