@@ -44,11 +44,12 @@ const Curriculum = () => {
       content: (
         <div className="space-y-4">
           <p className="font-source-serif text-lg text-brand-darkgreen leading-relaxed font-normal hover:text-gray-950 transition-colors duration-200">
-            Computer Engineering final-year student with international
-            experience in Germany and solid computer science background.
-            Practical experience in Full-stack development, Docker, Data
-            Science, and Machine Learning. Looking to leverage this experience
-            in Software Engineering or Data Science roles.
+            Computer Engineering undergraduate focused on creating innovative
+            software solutions. I bring international experience from Germany
+            and a solid Computer Science background, along with practical skills
+            in Full-stack development, Docker, Data Science, and Machine
+            Learning. Seeking to apply my experience and my vision in Software
+            Engineering or Data Science fields.
           </p>
           <div className="space-y-3">
             <div className="flex items-center gap-3 text-gray-800 hover:text-brand-darkgreen transition-colors duration-200 cursor-default">
