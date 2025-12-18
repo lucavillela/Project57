@@ -7,9 +7,7 @@ const MandalaBackground: React.FC = () => {
 
   // -- CONFIGURAÇÕES --
   const SYMMETRY = 10;
-
   const FADE_SPEED = 0.05;
-
   const DRAW_COLORS = ["#f6f2ea", "#f6f2ea"];
 
   useEffect(() => {
@@ -22,8 +20,15 @@ const MandalaBackground: React.FC = () => {
     let animationFrameId: number;
     let hue = 0;
 
+    // Variáveis para animação automática
+    let time = 0;
+
+    // Estado do mouse/input
     let mouse = { x: 0, y: 0, active: false };
     let lastMouse = { x: 0, y: 0 };
+
+    // Detecta se é mobile pela largura da janela (pode ajustar o 768px conforme sua preferência)
+    const isMobile = () => window.innerWidth <= 768;
 
     const resizeCanvas = () => {
       const parent = canvas.parentElement;
@@ -40,6 +45,7 @@ const MandalaBackground: React.FC = () => {
     resizeCanvas();
 
     const handleMouseMove = (e: MouseEvent) => {
+      // Se o usuário mexer o mouse, desativa o modo automático momentaneamente
       mouse.x = e.clientX;
       mouse.y = e.clientY;
       mouse.active = true;
@@ -47,7 +53,6 @@ const MandalaBackground: React.FC = () => {
 
     const handleMouseLeave = () => {
       mouse.active = false;
-      // Reseta o lastMouse para que, ao voltar, não risque uma linha reta do nada
       lastMouse = { x: 0, y: 0 };
     };
 
@@ -55,25 +60,47 @@ const MandalaBackground: React.FC = () => {
     window.addEventListener("mouseout", handleMouseLeave);
 
     const draw = () => {
+      time += 0.004;
+
       ctx.save();
       ctx.globalCompositeOperation = "destination-out";
       ctx.fillStyle = `rgba(0, 0, 0, ${FADE_SPEED})`;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-
       ctx.restore();
-      if (mouse.active) {
-        if (lastMouse.x === 0 && lastMouse.y === 0) {
-          lastMouse.x = mouse.x;
-          lastMouse.y = mouse.y;
-        }
 
-        const centerX = canvas.width / 2;
-        const centerY = canvas.height / 2;
+      const centerX = canvas.width / 2;
+      const centerY = canvas.height / 2;
+
+      let currentX = mouse.x;
+      let currentY = mouse.y;
+      let shouldDraw = mouse.active;
+
+      if (isMobile()) {
+        shouldDraw = true; // Força o desenho
+
+        const radiusX = canvas.width * 0.5; // 50% da largura
+        const radiusY = canvas.height * 0.5; // 50% da altura
+
+        currentX = centerX + Math.sin(time) * radiusX;
+        currentY = centerY + Math.cos(time * 1.3) * radiusY;
+
+        if (!mouse.active && lastMouse.x === 0 && lastMouse.y === 0) {
+          lastMouse.x = currentX;
+          lastMouse.y = currentY;
+        }
+      }
+
+      if (shouldDraw) {
+        // Inicializa lastMouse na primeira iteração do desenho
+        if (lastMouse.x === 0 && lastMouse.y === 0) {
+          lastMouse.x = currentX;
+          lastMouse.y = currentY;
+        }
 
         const startX = lastMouse.x - centerX;
         const startY = lastMouse.y - centerY;
-        const endX = mouse.x - centerX;
-        const endY = mouse.y - centerY;
+        const endX = currentX - centerX;
+        const endY = currentY - centerY;
 
         ctx.lineWidth = 1;
         ctx.lineCap = "round";
@@ -105,11 +132,13 @@ const MandalaBackground: React.FC = () => {
         }
 
         ctx.restore();
-      }
 
-      if (mouse.active) {
-        lastMouse.x = mouse.x;
-        lastMouse.y = mouse.y;
+        // Atualiza lastMouse com a posição atual (seja ela real ou automática)
+        lastMouse.x = currentX;
+        lastMouse.y = currentY;
+      } else {
+        // Se parou de desenhar, reseta o lastMouse
+        lastMouse = { x: 0, y: 0 };
       }
 
       hue++;

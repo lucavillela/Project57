@@ -48,7 +48,7 @@ const Curriculum = () => {
             experience in Germany and solid computer science background.
             Practical experience in Full-stack development, Docker, Data
             Science, and Machine Learning. Looking to leverage this experience
-            in Data Science or Software Engineering roles.
+            in Software Engineering or Data Science roles.
           </p>
           <div className="space-y-3">
             <div className="flex items-center gap-3 text-gray-800 hover:text-brand-darkgreen transition-colors duration-200 cursor-default">
@@ -123,7 +123,8 @@ const Curriculum = () => {
                 "Node.js",
                 "Docker",
                 "Git",
-                "PostgreSQL",
+                "DBeaver",
+                "Linux",
               ].map((skill) => (
                 <span
                   key={skill}
@@ -140,9 +141,10 @@ const Curriculum = () => {
             </h4>
             <div className="flex flex-wrap gap-2">
               {[
+                "Software Engineering",
                 "Full-stack Development",
+                "Data Science",
                 "Databases",
-                "Linux",
                 "Machine Learning",
               ].map((skill) => (
                 <span

@@ -11,7 +11,7 @@ export default function Home() {
 
       <div className="relative h-[94vh] w-full">
         <Image
-          src="/greenBackground.png"
+          src="/greenBackground.jpg"
           alt="Background"
           fill
           loading="eager"
@@ -37,7 +37,7 @@ export default function Home() {
 
       <div className="flex itens-center justify-center w-full bg-brand-darkgreen -mt-5 relative z-10">
         <Image
-          src="/greenBackground.png"
+          src="/greenBackground.jpg"
           alt="Background"
           fill
           loading="eager"
