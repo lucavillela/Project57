@@ -1,6 +1,7 @@
 import MandalaBackground from "@/components/MandalaBackground";
 import Navbar from "@/components/Navbar";
 import Curriculum from "@/components/Curriculum";
+import ScrollArrow from "@/components/ScrollArrow";
 import Image from "next/image";
 
 export default function Home() {
@@ -10,7 +11,7 @@ export default function Home() {
 
       <div className="relative h-[94vh] w-full">
         <Image
-          src="/greenBackground.png"
+          src="/greenBackground.jpg"
           alt="Background"
           fill
           loading="eager"
@@ -22,37 +23,21 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
-          <h1 className="font-cormorant text-[105px] font-[700] text-brand-cream text-shadow-lg animate-fadeInUp max-sm:text-[80px]">
+          <h1 className="font-cormorant text-[105px] font-[700] text-brand-cream text-shadow-lg animate-fadeInUp max-sm:text-[80px] mb-[-5]">
             Project 57
           </h1>
           <p className="font-[300] text-3xl text-brand-cream italic text-shadow-xs animate-fadeInUp max-sm:text-[25px]">
-            A blog and visual portfolio by Luca Torres Villela
+            A web portfolio by <br></br> Luca Torres Villela
           </p>
-          <div
-            id="curriculum"
-            className="absolute bottom-17 animate-bounce-down cursor-pointer"
-          >
-            <svg
-              className="w-8 h-8 text-brand-cream"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 14l-7 7m0 0l-7-7m7 7V3"
-              />
-            </svg>
+          <div id="curriculum" className="absolute bottom-17">
+            <ScrollArrow />
           </div>
         </div>
       </div>
 
       <div className="flex itens-center justify-center w-full bg-brand-darkgreen -mt-5 relative z-10">
         <Image
-          src="/greenBackground.png"
+          src="/greenBackground.jpg"
           alt="Background"
           fill
           loading="eager"

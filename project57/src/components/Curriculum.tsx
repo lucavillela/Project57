@@ -48,7 +48,7 @@ const Curriculum = () => {
             experience in Germany and solid computer science background.
             Practical experience in Full-stack development, Docker, Data
             Science, and Machine Learning. Looking to leverage this experience
-            in Data Science or Software Engineering roles.
+            in Software Engineering or Data Science roles.
           </p>
           <div className="space-y-3">
             <div className="flex items-center gap-3 text-gray-800 hover:text-brand-darkgreen transition-colors duration-200 cursor-default">
@@ -123,7 +123,8 @@ const Curriculum = () => {
                 "Node.js",
                 "Docker",
                 "Git",
-                "PostgreSQL",
+                "DBeaver",
+                "Linux",
               ].map((skill) => (
                 <span
                   key={skill}
@@ -140,9 +141,10 @@ const Curriculum = () => {
             </h4>
             <div className="flex flex-wrap gap-2">
               {[
+                "Software Engineering",
                 "Full-stack Development",
+                "Data Science",
                 "Databases",
-                "Linux",
                 "Machine Learning",
               ].map((skill) => (
                 <span
@@ -450,6 +452,44 @@ const Curriculum = () => {
             )}
           </div>
         ))}
+      </div>
+      <div className="mt-4 rounded-xl overflow-hidden border-2 border-brand-darkgreen bg-gradient-to-br from-brand-green/30 via-brand-green/20 to-brand-darkgreen/10 shadow-md hover:border-brand-darkgreen/70 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+        <div className="px-6 py-6">
+          <div className="flex items-center gap-4 mb-4">
+            <Mail className="w-6 h-6 text-brand-darkgreen" />
+            <h3 className="text-2xl font-extrabold text-brand-darkgreen">
+              Contact
+            </h3>
+          </div>
+          <p className="text-gray-700 text-base mb-6 leading-relaxed">
+            Feel free to reach out for questions, opportunities, or just to
+            connect!
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
+            <a
+              href="mailto:lucatvillela@gmail.com"
+              className="flex items-center gap-2 text-brand-cream bg-brand-darkgreen hover:text-brand-cream bg-brand-cream hover:bg-brand-darkgreen px-5 py-2.5 rounded-lg transition-all duration-300 font-semibold hover:shadow-lg hover:scale-105 transform text-sm border-brand-cream hover:border-brand-darkgreen w-full sm:w-auto justify-center"
+            >
+              <Mail className="w-5 h-5" />
+            </a>
+            <a
+              href="https://github.com/lucavillela"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-brand-cream bg-brand-darkgreen hover:text-brand-cream bg-brand-cream hover:bg-brand-darkgreen px-5 py-2.5 rounded-lg transition-all duration-300 font-semibold hover:shadow-lg hover:scale-105 transform text-sm border-brand-cream hover:border-brand-darkgreen w-full sm:w-auto justify-center"
+            >
+              <Github className="w-5 h-5" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/luca-villela"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-brand-cream bg-brand-darkgreen hover:text-brand-cream bg-brand-cream hover:bg-brand-darkgreen px-5 py-2.5 rounded-lg transition-all duration-300 font-semibold hover:shadow-lg hover:scale-105 transform text-sm border-brand-cream hover:border-brand-darkgreen w-full md:w-auto sm:w-auto justify-center"
+            >
+              <Linkedin className="w-5 h-5" />
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );
