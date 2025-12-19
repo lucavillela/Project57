@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="h-[6vh] w-full bg-brand-cream text-brand-darkgreen flex items-center justify-between px-8 border-b border-b-2 border-brand-cream animate-fadeIn relative">
+    <nav className="w-full bg-brand-cream text-brand-darkgreen flex items-center justify-between px-8 border-b border-b-2 border-brand-cream animate-fadeIn relative">
       <div className="text-[40px] font-extrabold">57</div>
 
       {/* Desktop Menu */}

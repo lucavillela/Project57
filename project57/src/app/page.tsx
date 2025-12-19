@@ -9,7 +9,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
 
-      <div className="relative h-[94vh] w-full">
+      <div className="relative min-h-[max(500px,94vh)] w-full">
         <Image
           src="/greenBackground.jpg"
           alt="Background"
@@ -22,7 +22,7 @@ export default function Home() {
           <MandalaBackground />
         </div>
 
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
+        <div className="relative z-10 min-h-[max(500px,94vh)] flex flex-col items-center justify-center text-center px-4">
           <h1 className="font-cormorant text-[105px] font-[700] text-brand-cream text-shadow-lg animate-fadeInUp max-sm:text-[80px] mb-[-5]">
             Project 57
           </h1>
