@@ -18,8 +18,66 @@ const sourceSerif = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
-  title: "Project 57",
-  description: "Web portfolio and blog",
+  title: {
+    default: "Luca Torres Villela | Web Portfolio",
+    template: "%s | Luca Torres Villela",
+  },
+  description:
+    "Computer Engineering undergraduate focused on creating innovative software solutions.",
+  keywords: [
+    "portfolio",
+    "full-stack",
+    "react",
+    "next.js",
+    "Luca Torres Villela",
+    "software engineer",
+    "datascience",
+    "software developer",
+  ],
+  authors: [{ name: "Luca Torres Villela" }],
+  creator: "Luca Torres Villela",
+  metadataBase: new URL("https://project57.com.br"),
+  alternates: {
+    canonical: "/",
+    languages: {
+      "en-US": "/en",
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://project57.com.br",
+    title: "Luca Torres Villela | Web Portfolio",
+    description:
+      "Computer Engineering undergraduate focused on creating innovative software solutions.",
+    siteName: "Luca Torres Villela Portfolio",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Luca Torres Villela Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Luca Torres Villela | Web Developer Portfolio",
+    description:
+      "Computer Engineering undergraduate focused on creating innovative software solutions.",
+    images: ["/og-image.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -28,7 +86,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="en">
       <body
         className={`${cormorant.variable} ${sourceSerif.variable} antialiased`}
       >
