@@ -399,14 +399,12 @@ const Curriculum = () => {
           to {
             opacity: 1;
             transform: translateY(0);
-            max-height: 2000px;
           }
         }
         @keyframes slideUp {
           from {
             opacity: 1;
             transform: translateY(0);
-            max-height: 2000px;
           }
           to {
             opacity: 0;
