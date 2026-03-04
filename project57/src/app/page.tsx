@@ -12,18 +12,26 @@ import Button from "@/components/Button";
 export default function Home() {
   const [activeSection, setActiveSection] = useState("curriculum");
 
-  const handleSectionChange = (section: SetStateAction<string>) => {
+  const handleSectionChange = (section: string) => {
     setActiveSection(section);
 
-    const element = document.getElementById("content-section");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    // esperar o próximo frame / render para garantir que o elemento alvo exista
+    requestAnimationFrame(() => {
+      // pequeno atraso extra para garantir render completo
+      setTimeout(() => {
+        const target =
+          document.getElementById(section) ||
+          document.getElementById("content-section");
+        if (target instanceof HTMLElement) {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 50);
+    });
   };
 
   return (
     <main className="min-h-screen">
-      <Navbar />
+      <Navbar onSectionChange={handleSectionChange} />
 
       <div className="relative h-[max(500px,94vh)] w-full">
         <Image
@@ -38,35 +46,26 @@ export default function Home() {
           <MandalaBackground />
         </div>
 
-        <div className="relative z-10 h-[max(500px,94vh)] flex flex-col text-center px-4 w-full">
-          <div className="flex-1"></div>
+        <div className="relative z-10 h-[max(500px,94vh)] flex flex-col items-center justify-center text-center px-4 w-full">
+          <h1 className="font-cormorant text-[105px] font-[700] text-brand-cream text-shadow-lg animate-fadeInUp max-sm:text-[70px] mb-[-5]">
+            Project 57
+          </h1>
+          <p className="font-[300] text-3xl text-brand-cream italic text-shadow-xs animate-fadeInUp max-sm:text-[25px] mb-8">
+            A web portfolio by <br /> Luca Torres Villela
+          </p>
 
-          <div className="flex flex-col items-center">
-            <h1 className="font-cormorant text-[105px] font-[700] text-brand-cream text-shadow-lg animate-fadeInUp max-sm:text-[70px] mb-[-5]">
-              Project 57
-            </h1>
-            <p className="font-[300] text-3xl text-brand-cream italic text-shadow-xs animate-fadeInUp max-sm:text-[25px]">
-              A web portfolio by <br /> Luca Torres Villela
-            </p>
+          <div className="flex flex-row items-center justify-center gap-10 animate-fadeInUp max-sm:gap-5">
+            <Button
+              label="Curriculum"
+              onClick={() => handleSectionChange("curriculum")}
+            />
+            <Button
+              label="Projects"
+              onClick={() => handleSectionChange("projects")}
+            />
           </div>
 
-          <div className="flex-1 flex flex-col items-center justify-center w-full -translate-y-13">
-            <div className="flex flex-row items-center justify-center gap-10 animate-fadeInUp max-sm:gap-5">
-              <Button
-                label="Curriculum"
-                onClick={() => handleSectionChange("curriculum")}
-              />
-              <Button
-                label="Projects"
-                onClick={() => handleSectionChange("projects")}
-              />
-            </div>
-          </div>
-
-          <div
-            id="curriculum"
-            className="absolute bottom-17 w-full flex justify-center left-0"
-          >
+          <div className="absolute bottom-17 w-full flex justify-center left-0">
             <ScrollArrow />
           </div>
         </div>

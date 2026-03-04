@@ -4,7 +4,10 @@ import projectsData from "@/data/projects.json";
 
 export default function Projects() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-[900px] mt-4 animate-fadeInUp">
+    <div
+      id="projects"
+      className="scroll-m-[250px] grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-[900px] mt-4 animate-fadeInUp"
+    >
       {projectsData.map((project: any) => (
         <Link
           href={project.link || "#"}
