@@ -30,7 +30,7 @@ export default function Projects() {
             </p>
 
             <div className="mt-auto w-fit text-brand-darkgreen font-semibold text-sm border-b-2 border-transparent group-hover:border-brand-darkgreen transition-all duration-300 pb-1">
-              View Project →
+              {project.callToAction + " →" || "View Project  →"}
             </div>
           </div>
         </Link>

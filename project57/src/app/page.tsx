@@ -31,10 +31,10 @@ export default function Home() {
           alt="Background"
           fill
           loading="eager"
-          className="object-cover -z-20"
+          className="object-cover -z-20 w-full"
         />
 
-        <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 -z-10 w-full">
           <MandalaBackground />
         </div>
 
@@ -42,7 +42,7 @@ export default function Home() {
           <div className="flex-1"></div>
 
           <div className="flex flex-col items-center">
-            <h1 className="font-cormorant text-[105px] font-[700] text-brand-cream text-shadow-lg animate-fadeInUp max-sm:text-[80px] mb-[-5]">
+            <h1 className="font-cormorant text-[105px] font-[700] text-brand-cream text-shadow-lg animate-fadeInUp max-sm:text-[70px] mb-[-5]">
               Project 57
             </h1>
             <p className="font-[300] text-3xl text-brand-cream italic text-shadow-xs animate-fadeInUp max-sm:text-[25px]">
@@ -51,7 +51,7 @@ export default function Home() {
           </div>
 
           <div className="flex-1 flex flex-col items-center justify-center w-full -translate-y-13">
-            <div className="flex flex-row items-center justify-center gap-10 animate-fadeInUp">
+            <div className="flex flex-row items-center justify-center gap-10 animate-fadeInUp max-sm:gap-5">
               <Button
                 label="Curriculum"
                 onClick={() => handleSectionChange("curriculum")}
