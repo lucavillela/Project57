@@ -15,9 +15,7 @@ export default function Home() {
   const handleSectionChange = (section: string) => {
     setActiveSection(section);
 
-    // esperar o próximo frame / render para garantir que o elemento alvo exista
     requestAnimationFrame(() => {
-      // pequeno atraso extra para garantir render completo
       setTimeout(() => {
         const target =
           document.getElementById(section) ||
@@ -47,14 +45,14 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 h-[max(500px,94vh)] flex flex-col items-center justify-center text-center px-4 w-full">
-          <h1 className="font-cormorant text-[105px] font-[700] text-brand-cream text-shadow-lg animate-fadeInUp max-sm:text-[70px] mb-[-5]">
+          <h1 className="font-cormorant text-[105px] font-[700] text-brand-cream text-shadow-lg animate-fadeInUp max-sm:text-[65px] mb-[-5]">
             Project 57
           </h1>
-          <p className="font-[300] text-3xl text-brand-cream italic text-shadow-xs animate-fadeInUp max-sm:text-[25px] mb-8">
+          <p className="font-[300] text-3xl text-brand-cream italic text-shadow-xs animate-fadeInUp max-sm:text-[20px] mb-8">
             A web portfolio by <br /> Luca Torres Villela
           </p>
 
-          <div className="flex flex-row items-center justify-center gap-10 animate-fadeInUp max-sm:gap-5">
+          <div className="flex flex-row items-center justify-center gap-10 animate-fadeInUp max-sm:gap-2">
             <Button
               label="Curriculum"
               onClick={() => handleSectionChange("curriculum")}
@@ -82,7 +80,7 @@ export default function Home() {
           loading="eager"
           className="object-cover -z-20"
         />
-        <div className="flex flex-col items-center justify-center h-full w-fit min-sm:min-w-[700px] bg-brand-cream rounded-t-3xl -mt-5 relative z-20 px-8 py-8 max-sm:px-3 max-sm:w-full min-h-[500px]">
+        <div className="flex flex-col items-center justify-center h-full w-fit min-sm: bg-brand-cream rounded-t-3xl -mt-5 relative z-20 px-8 py-8 max-sm:px-3 max-sm:w-full min-h-[500px]">
           <h1 className="font-cormorant text-[60px] font-bold text-brand-darkgreen mb-6 max-sm:text-[40px] max-sm:text-center capitalize">
             {activeSection}
           </h1>
