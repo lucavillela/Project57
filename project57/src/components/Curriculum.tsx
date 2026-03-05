@@ -388,7 +388,7 @@ const Curriculum = () => {
   ];
 
   return (
-    <div className="w-full max-w-4xl mx-auto">
+    <div id="curriculum" className="w-full max-w-4xl mx-auto scroll-m-[250px]">
       <style>{`
         @keyframes slideDown {
           from {

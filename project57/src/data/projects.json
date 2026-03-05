@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Corretores Online",
+    "description": "Complete realtor social media platform, that connects real estate agents with clients. Corretoreson.com has profiles and realtime location and map integration (Google Maps API)",
+    "image": "/corretoresOnline.png",
+    "link": "https://corretoreson.com/",
+    "callToAction": "Visit the website"
+  },
+  {
+    "id": 2,
+    "title": "DadoEmCasa",
+    "description": "A simple but complete dice-rolling website for players of tabletop RPGs who don't have dice at home.",
+    "image": "/dadoEmCasa.png",
+    "link": "https://dadoemcasa.vercel.app/",
+    "callToAction": "Try it online"
+  },
+  {
+    "id": 4,
+    "title": "Pong in Processing",
+    "description": "Pong game made in Processing (Java)",
+    "image": "/pong.png",
+    "link": "https://github.com/lucavillela/Pong-Game-in-Processing",
+    "callToAction": "View repository"
+  },
+  {
+    "id": 5,
+    "title": "Particle System in Processing",
+    "description": "Computational simulation developed in Processing Java to visualize the trajectory of a charged particle in a uniform electric field.",
+    "image": "/simulation.png",
+    "link": "https://github.com/lucavillela/Particle-Simulation",
+    "callToAction": "View repository"
+  },
+  {
+    "id": 6,
+    "title": "Pakistan Estate Predictor",
+    "description": "A machine learning model developed in Python to predict real estate info in Pakistan based on various features such as location, size, and amenities.",
+    "image": "/pakistan.png",
+    "link": "https://github.com/lucavillela/pakistan-estate-ml",
+    "callToAction": "View repository"
+  },
+  {
+    "id": 7,
+    "title": "FPGA-based Fuzzy Diagnosis System for Heart Rate Monitoring",
+    "description": "A fuzzy logic-based system implemented on an FPGA to monitor heart rate and provide diagnostic insights based on the collected data.",
+    "image": "/fuzzyheart.png",
+    "link": "FPGA-Based-Fuzzy-Diagnostic-System-for-Heart-Rate-Monitoring.pdf",
+    "callToAction": "View article"
+  }
+]

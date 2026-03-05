@@ -1,16 +1,19 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 
-const Navbar: React.FC = () => {
+type NavbarProps = {
+  onSectionChange?: (section: string) => void;
+};
+
+const Navbar: React.FC<NavbarProps> = ({ onSectionChange }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Curriculum", href: "#curriculum" },
-    /* { name: "Projects", href: "/" },
-    { name: "Blog", href: "/blog" }, */
+    { name: "Projects", href: "#projects" },
+    /*{ name: "Blog", href: "/blog" }, */
   ];
 
   const handleSmoothScroll = (
@@ -19,10 +22,7 @@ const Navbar: React.FC = () => {
   ) => {
     if (href.startsWith("#")) {
       e.preventDefault();
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
+      onSectionChange?.(href.replace("#", ""));
     }
     setIsOpen(false);
   };
