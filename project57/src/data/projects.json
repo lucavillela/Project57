@@ -1,5 +1,13 @@
 [
   {
+    "id": 0,
+    "title": "Latitude 12",
+    "description": "Website for a Trail Running and Mountain Biking event in Bahia. It was developed with Next.js, Node, Prisma and SQLite and it features complete CMS interface.",
+    "image": "/latitude12.png",
+    "link": "https://www.desafiolatitude12.com.br/",
+    "callToAction": "Visit the website"
+  },
+  {
     "id": 1,
     "title": "Corretores Online",
     "description": "Complete realtor social media platform, that connects real estate agents with clients. Corretoreson.com has profiles and realtime location and map integration (Google Maps API)",
