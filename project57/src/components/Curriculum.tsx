@@ -11,8 +11,10 @@ import {
   Linkedin,
   Github,
   MapPin,
-  Phone,
 } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
+import { renderRich } from "@/i18n/renderRich";
+import Contact, { EMAIL, GITHUB_URL, LINKEDIN_URL } from "@/components/Contact";
 
 interface Section {
   id: string;
@@ -21,9 +23,17 @@ interface Section {
   content: React.ReactNode;
 }
 
+const SKILL_GROUP_STYLES = [
+  "bg-blue-100 text-blue-900",
+  "bg-green-100 text-green-900",
+  "bg-purple-100 text-purple-900",
+  "bg-amber-100 text-amber-900",
+];
+
 const Curriculum = () => {
+  const { t } = useLanguage();
   const [expandedSections, setExpandedSections] = useState<Set<string>>(
-    new Set(["about", "skills", "experience", "education"])
+    new Set(["about"])
   );
 
   const toggleSection = (id: string) => {
@@ -39,36 +49,31 @@ const Curriculum = () => {
   const sections: Section[] = [
     {
       id: "about",
-      title: "About Me",
+      title: t.curriculum.about.title,
       icon: <GraduationCap className="w-6 h-6" />,
       content: (
         <div className="space-y-4">
           <p className="font-source-serif text-lg text-brand-darkgreen leading-relaxed font-normal hover:text-gray-950 transition-colors duration-200">
-            Computer Engineering undergraduate focused on creating innovative
-            software solutions. I bring international experience from Germany
-            and a solid Computer Science background, along with practical skills
-            in Full-stack development, Docker, Data Science, and Machine
-            Learning. Seeking to apply my experience and my vision in Software
-            Engineering or Data Science fields.
+            {t.curriculum.about.text}
           </p>
           <div className="space-y-3">
             <div className="flex items-center gap-3 text-gray-800 hover:text-brand-darkgreen transition-colors duration-200 cursor-default">
               <MapPin className="w-5 h-5 text-brand-darkgreen shrink-0" />
-              <span className="text-md">Salvador, Brazil 🇧🇷</span>
+              <span className="text-md">{t.curriculum.about.location}</span>
             </div>
             <div className="flex items-center gap-3 text-gray-800 group">
               <Mail className="w-5 h-5 text-brand-darkgreen shrink-0 group-hover:animate-pulse" />
               <a
-                href="mailto:lucatvillela@gmail.com"
+                href={`mailto:${EMAIL}`}
                 className="text-md hover:text-brand-darkgreen transition-colors duration-200 hover:underline underline-offset-2"
               >
-                lucatvillela@gmail.com
+                {EMAIL}
               </a>
             </div>
           </div>
           <div className="flex gap-4 pt-4">
             <a
-              href="https://github.com/lucavillela"
+              href={GITHUB_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-brand-darkgreen hover:text-brand-darkgreen bg-brand-cream hover:bg-brand-cream px-4 py-2 rounded-lg transition-all duration-300 font-semibold hover:shadow-lg hover:scale-101 transform text-sm border-2 border-brand-cream hover:border-brand-darkgreen"
@@ -77,7 +82,7 @@ const Curriculum = () => {
               GitHub
             </a>
             <a
-              href="https://www.linkedin.com/in/luca-villela"
+              href={LINKEDIN_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-brand-darkgreen hover:text-brand-darkgreen bg-brand-cream hover:bg-brand-cream px-4 py-2 rounded-lg transition-all duration-300 font-semibold hover:shadow-lg hover:scale-101 transform text-sm border-2 border-brand-cream hover:border-brand-darkgreen"
@@ -91,297 +96,89 @@ const Curriculum = () => {
     },
     {
       id: "skills",
-      title: "Technical Skills",
+      title: t.curriculum.skills.title,
       icon: <Code className="w-6 h-6" />,
       content: (
         <div className="space-y-6">
-          <div>
-            <h4 className="font-semibold text-brand-darkgreen mb-3 text-lg">
-              Programming Languages
-            </h4>
-            <div className="flex flex-wrap gap-2">
-              {["Type/JavaScript", "Python", "SQL", "C/C++", "Java", "C#"].map(
-                (skill) => (
+          {t.curriculum.skills.groups.map((group, index) => (
+            <div key={group.title}>
+              <h4 className="font-semibold text-brand-darkgreen mb-3 text-lg">
+                {group.title}
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {group.items.map((skill) => (
                   <span
                     key={skill}
-                    className="text-md px-4 py-2 bg-blue-100 text-blue-900 font-semibold rounded-full text-sm"
+                    className={`text-md px-4 py-2 font-semibold rounded-full text-sm ${
+                      SKILL_GROUP_STYLES[index % SKILL_GROUP_STYLES.length]
+                    }`}
                   >
                     {skill}
                   </span>
-                )
-              )}
+                ))}
+              </div>
             </div>
-          </div>
-          <div>
-            <h4 className="font-semibold text-brand-darkgreen mb-3 text-lg">
-              Frameworks & Tools
-            </h4>
-            <div className="flex flex-wrap gap-2">
-              {[
-                "React",
-                "Next.js",
-                "Angular",
-                "Node.js",
-                "Docker",
-                "Git",
-                "DBeaver",
-                "Linux",
-              ].map((skill) => (
-                <span
-                  key={skill}
-                  className="text-md px-4 py-2 bg-green-100 text-green-900 font-semibold rounded-full text-sm"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-          <div>
-            <h4 className="font-semibold text-brand-darkgreen mb-3 text-lg">
-              Areas of Interest and Knowledge
-            </h4>
-            <div className="flex flex-wrap gap-2">
-              {[
-                "Software Engineering",
-                "Full-stack Development",
-                "Data Science",
-                "Databases",
-                "Machine Learning",
-              ].map((skill) => (
-                <span
-                  key={skill}
-                  className="text-md px-4 py-2 bg-purple-100 text-purple-900 font-semibold rounded-full text-sm"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-          <div>
-            <h4 className="font-semibold text-brand-darkgreen mb-3 text-lg">
-              Other Tools
-            </h4>
-            <div className="flex flex-wrap gap-2">
-              {["Power BI", "Power Automate", "Power Apps"].map((skill) => (
-                <span
-                  key={skill}
-                  className="text-md px-4 py-2 bg-amber-100 text-amber-900 font-semibold rounded-full text-sm"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       ),
     },
     {
       id: "experience",
-      title: "Professional Experience",
+      title: t.curriculum.experience.title,
       icon: <Briefcase className="w-6 h-6" />,
       content: (
         <div className="space-y-8">
-          <div className="border-l-4  pl-6">
-            <h4 className="font-semibold text-brand-darkgreen text-xl mb-1">
-              Research Assistant — Software Developer
-            </h4>
-            <p className="text-lg text-gray-700 font-medium mb-1">
-              Fraunhofer Institute for Production Technology IPT
-            </p>
-            <p className="text-md text-gray-700 font-medium mb-4">
-              Aachen, Germany 🇩🇪 • 07/2024 – 07/2025
-            </p>
-            <ul className="space-y-3 text-gray-800">
-              <li className="flex gap-3">
-                <span className="text-brand-darkgreen mt-1 shrink-0 font-bold">
-                  •
-                </span>
-                <span className="text-md font-normal leading-relaxed">
-                  Developed <span className="font-bold">Angular</span> web
-                  applications used to demonstrate research results to partners
-                  and industry.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-brand-darkgreen mt-1 shrink-0 font-bold">
-                  •
-                </span>
-                <span className="text-md font-medium leading-relaxed">
-                  Implemented{" "}
-                  <span className="font-bold">MQTT communication</span> with
-                  microcontrollers, enabling real-time monitoring of experiments
-                  and prototypes.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-brand-darkgreen mt-1 shrink-0 font-bold">
-                  •
-                </span>
-                <span className="text-md font-medium leading-relaxed">
-                  Containerized systems with{" "}
-                  <span className="font-bold">Docker</span>, ensuring
-                  reproducible environments and facilitating deployment.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-brand-darkgreen mt-1 shrink-0 font-bold">
-                  •
-                </span>
-                <span className="text-md font-medium leading-relaxed">
-                  Researched{" "}
-                  <span className="font-bold">5G network technologies</span> and
-                  contributed to prototypes involving edge computing.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-brand-darkgreen mt-1 shrink-0 font-bold">
-                  •
-                </span>
-                <span className="text-md font-medium leading-relaxed">
-                  Managed <span className="font-bold">virtual machines</span>{" "}
-                  and <span className="font-bold">Linux systems</span> used in
-                  experiments and internal tools.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-brand-darkgreen mt-1 shrink-0 font-bold">
-                  •
-                </span>
-                <span className="text-md font-medium leading-relaxed">
-                  Collaborated with multicultural teams using{" "}
-                  <span className="font-bold">Git</span> and{" "}
-                  <span className="font-bold">agile methodologies</span>.
-                </span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="border-l-4 border-brand-darkgreen pl-6">
-            <h4 className="font-semibold text-brand-darkgreen text-xl mb-1">
-              Data Science & Software Development Intern
-            </h4>
-            <p className="text-lg text-gray-700 font-medium mb-1">
-              Bahia Court of Justice
-            </p>
-            <p className="text-md text-gray-700 font-medium mb-4">
-              Salvador, Brazil 🇧🇷 • 01/2024 – 06/2024
-            </p>
-            <ul className="space-y-3 text-gray-800">
-              <li className="flex gap-3">
-                <span className="text-brand-darkgreen mt-1 shrink-0 font-bold">
-                  •
-                </span>
-                <span className="text-md font-medium leading-relaxed">
-                  Developed{" "}
-                  <span className="font-bold">Power BI dashboards</span> used by
-                  administrative departments to support decision-making.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-brand-darkgreen mt-1 shrink-0 font-bold">
-                  •
-                </span>
-                <span className="text-md font-medium leading-relaxed">
-                  Automated manual processes using{" "}
-                  <span className="font-bold">Power Apps</span> and{" "}
-                  <span className="font-bold">Power Automate</span>, increasing
-                  efficiency.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-brand-darkgreen shrink-0 font-bold">
-                  •
-                </span>
-                <span className="text-md font-medium leading-relaxed">
-                  Created internal <span className="font-bold">C#</span>{" "}
-                  applications to replace third-party tools, ensuring
-                  technological independence.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-brand-darkgreen mt-1 shrink-0 font-bold">
-                  •
-                </span>
-                <span className="text-md font-medium leading-relaxed">
-                  Delivered solutions aligned with court standards, contributing
-                  to agility and service quality.
-                </span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="border-l-4 border-brand-darkgreen pl-6">
-            <h4 className="font-semibold text-brand-darkgreen text-xl mb-1">
-              Software Development Intern
-            </h4>
-            <p className="text-lg text-gray-700 font-medium mb-1">In9 Mídia</p>
-            <p className="text-md text-gray-700 font-medium mb-4">
-              Salvador, Brazil 🇧🇷 • 03/2023 – 12/2023
-            </p>
-            <ul className="space-y-3 text-gray-800">
-              <li className="flex gap-3">
-                <span className="text-brand-darkgreen mt-1 shrink-0 font-bold">
-                  •
-                </span>
-                <span className="text-md font-medium leading-relaxed">
-                  Modeled and managed databases with{" "}
-                  <span className="font-bold">PostgreSQL</span> for production
-                  applications.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-brand-darkgreen mt-1 shrink-0 font-bold">
-                  •
-                </span>
-                <span className="text-md font-medium leading-relaxed">
-                  Used <span className="font-bold">Docker</span> to facilitate
-                  development, integration, and deployment.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-brand-darkgreen mt-1 shrink-0 font-bold">
-                  •
-                </span>
-                <span className="text-md font-medium leading-relaxed">
-                  Developed applications with{" "}
-                  <span className="font-bold">Node.js</span> and{" "}
-                  <span className="font-bold">React</span>.
-                </span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-brand-darkgreen mt-1 shrink-0 font-bold">
-                  •
-                </span>
-                <span className="text-md font-medium leading-relaxed">
-                  Implemented <span className="font-bold">RESTful APIs</span>{" "}
-                  and optimized existing endpoints.
-                </span>
-              </li>
-            </ul>
-          </div>
+          {t.curriculum.experience.jobs.map((job) => (
+            <div key={job.company} className="border-l-4 border-brand-darkgreen pl-6">
+              <h4 className="font-semibold text-brand-darkgreen text-xl mb-1">
+                {job.role}
+              </h4>
+              <p className="text-lg text-gray-700 font-medium mb-1">
+                {job.company}
+              </p>
+              <p className="text-md text-gray-700 font-medium mb-4">
+                {job.place}
+              </p>
+              <ul className="space-y-3 text-gray-800">
+                {job.bullets.map((bullet, index) => (
+                  <li key={index} className="flex gap-3">
+                    <span className="text-brand-darkgreen mt-1 shrink-0 font-bold">
+                      •
+                    </span>
+                    <span className="text-md font-medium leading-relaxed">
+                      {renderRich(bullet)}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       ),
     },
     {
       id: "education",
-      title: "Education",
+      title: t.curriculum.education.title,
       icon: <Award className="w-6 h-6" />,
       content: (
         <div className="space-y-8">
-          <div className="border-l-4 border-brand-darkgreen pl-6">
-            <h4 className="font-semibold text-brand-darkgreen text-xl mb-1">
-              Bachelor's Degree in Computer Engineering
-            </h4>
-            <p className="text-base text-gray-700 font-medium mb-1">
-              SENAI CIMATEC University
-            </p>
-            <p className="text-base text-gray-600 mb-1">
-              Salvador, Brazil • In Progress
-            </p>
-            <p className="text-gray-800 text-base font-medium">
-              9/10 semesters completed
-            </p>
-          </div>
+          {t.curriculum.education.entries.map((entry) => (
+            <div
+              key={entry.degree}
+              className="border-l-4 border-brand-darkgreen pl-6"
+            >
+              <h4 className="font-semibold text-brand-darkgreen text-xl mb-1">
+                {entry.degree}
+              </h4>
+              <p className="text-base text-gray-700 font-medium mb-1">
+                {entry.school}
+              </p>
+              <p className="text-base text-gray-600 mb-1">{entry.place}</p>
+              <p className="text-gray-800 text-base font-medium">
+                {entry.detail}
+              </p>
+            </div>
+          ))}
         </div>
       ),
     },
@@ -389,107 +186,57 @@ const Curriculum = () => {
 
   return (
     <div id="curriculum" className="w-full max-w-4xl mx-auto scroll-m-[250px]">
-      <style>{`
-        @keyframes slideDown {
-          from {
-            opacity: 0;
-            transform: translateY(-10px);
-            max-height: 0;
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        @keyframes slideUp {
-          from {
-            opacity: 1;
-            transform: translateY(0);
-          }
-          to {
-            opacity: 0;
-            transform: translateY(-10px);
-            max-height: 0;
-          }
-        }
-        .animate-slideDown {
-          animation: slideDown 0.3s ease-out forwards;
-        }
-        .animate-slideUp {
-          animation: slideUp 0.3s ease-in forwards;
-        }
-      `}</style>
       <div className="space-y-3">
-        {sections.map((section) => (
-          <div
-            key={section.id}
-            className="rounded-xl overflow-hidden border-2 border-brand-darkgreen/30 hover:border-brand-darkgreen/70 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-          >
-            <button
-              onClick={() => toggleSection(section.id)}
-              className="w-full px-6 py-4 flex items-center justify-between bg-linear-to-r from-brand-darkgreen/8 to-transparent hover:from-brand-darkgreen/15 hover:to-brand-darkgreen/5 transition-all duration-300 group"
-            >
-              <div className="flex items-center gap-4">
-                <div className="text-brand-darkgreen group-hover:scale-125 group-hover:text-brand-darkgreen/80 transition-all duration-300">
-                  {section.icon}
-                </div>
-                <h3 className="text-2xl font-extrabold text-brand-darkgreen group-hover:text-opacity-80 text-left transition-all duration-200">
-                  {section.title}
-                </h3>
-              </div>
-              <ChevronDown
-                className={`w-5 h-5 text-brand-darkgreen transition-transform duration-300 ${
-                  expandedSections.has(section.id) ? "transform rotate-180" : ""
-                }`}
-              />
-            </button>
+        {sections.map((section) => {
+          const isExpanded = expandedSections.has(section.id);
 
-            {expandedSections.has(section.id) && (
-              <div className="px-6 py-6 border-t border-brand-darkgreen/20 bg-white/60 backdrop-blur-sm animate-slideDown">
-                {section.content}
+          return (
+            <div
+              key={section.id}
+              className="rounded-xl overflow-hidden border-2 border-brand-darkgreen/30 hover:border-brand-darkgreen/70 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+            >
+              <button
+                onClick={() => toggleSection(section.id)}
+                aria-expanded={isExpanded}
+                aria-controls={`section-panel-${section.id}`}
+                className="w-full px-6 py-4 flex items-center justify-between bg-linear-to-r from-brand-darkgreen/8 to-transparent hover:from-brand-darkgreen/15 hover:to-brand-darkgreen/5 transition-all duration-300 group cursor-pointer"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="text-brand-darkgreen group-hover:scale-125 group-hover:text-brand-darkgreen/80 transition-all duration-300">
+                    {section.icon}
+                  </div>
+                  <h3 className="text-2xl font-extrabold text-brand-darkgreen group-hover:text-opacity-80 text-left transition-all duration-200">
+                    {section.title}
+                  </h3>
+                </div>
+                <ChevronDown
+                  className={`w-5 h-5 text-brand-darkgreen transition-transform duration-300 ${
+                    isExpanded ? "transform rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {/* The grid-rows trick animates both opening and closing. */}
+              <div
+                id={`section-panel-${section.id}`}
+                className={`grid transition-all duration-300 ease-in-out ${
+                  isExpanded
+                    ? "grid-rows-[1fr] opacity-100"
+                    : "grid-rows-[0fr] opacity-0"
+                }`}
+              >
+                <div className="overflow-hidden">
+                  <div className="px-6 py-6 border-t border-brand-darkgreen/20 bg-white/60 backdrop-blur-sm">
+                    {section.content}
+                  </div>
+                </div>
               </div>
-            )}
-          </div>
-        ))}
+            </div>
+          );
+        })}
       </div>
-      <div className="mt-4 rounded-xl overflow-hidden border-2 border-brand-darkgreen bg-linear-to-br from-brand-green/30 via-brand-green/20 to-brand-darkgreen/10 shadow-md hover:border-brand-darkgreen/70 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-        <div className="px-6 py-6">
-          <div className="flex items-center gap-4 mb-4">
-            <Mail className="w-6 h-6 text-brand-darkgreen" />
-            <h3 className="text-2xl font-extrabold text-brand-darkgreen">
-              Contact
-            </h3>
-          </div>
-          <p className="text-gray-700 text-base mb-6 leading-relaxed">
-            Feel free to reach out for questions, opportunities, or just to
-            connect!
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
-            <a
-              href="mailto:lucatvillela@gmail.com"
-              className="flex items-center gap-2 text-brand-cream bg-brand-darkgreen hover:text-brand-cream hover:bg-brand-darkgreen px-5 py-2.5 rounded-lg transition-all duration-300 font-semibold hover:shadow-lg hover:scale-105 transform text-sm border-brand-cream hover:border-brand-darkgreen w-full sm:w-auto justify-center"
-            >
-              <Mail className="w-5 h-5" />
-            </a>
-            <a
-              href="https://github.com/lucavillela"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-brand-cream bg-brand-darkgreen hover:text-brand-cream hover:bg-brand-darkgreen px-5 py-2.5 rounded-lg transition-all duration-300 font-semibold hover:shadow-lg hover:scale-105 transform text-sm border-brand-cream hover:border-brand-darkgreen w-full sm:w-auto justify-center"
-            >
-              <Github className="w-5 h-5" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/luca-villela"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-brand-cream bg-brand-darkgreen hover:text-brand-cream hover:bg-brand-darkgreen px-5 py-2.5 rounded-lg transition-all duration-300 font-semibold hover:shadow-lg hover:scale-105 transform text-sm border-brand-cream hover:border-brand-darkgreen w-full md:w-auto sm:w-auto justify-center"
-            >
-              <Linkedin className="w-5 h-5" />
-            </a>
-          </div>
-        </div>
-      </div>
+
+      <Contact />
     </div>
   );
 };
