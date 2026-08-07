@@ -41,13 +41,13 @@
     },
     "description": {
       "en": "A simple but complete dice-rolling website for players of tabletop RPGs who don't have dice at home.",
-      "pt": "Um site de rolagem de dados simples, mas completo, para jogadores de RPG de mesa que não têm dados em casa."
+      "pt": "Um site de rolagem de dados para jogadores de RPG de mesa que não têm dados em casa."
     },
     "image": "/dadoEmCasa.png",
     "link": "https://dadoemcasa.vercel.app/",
     "callToAction": {
       "en": "Try it online",
-      "pt": "Experimente online"
+      "pt": "Acessar"
     }
   },
   {

@@ -205,7 +205,7 @@ export const translations: Record<Lang, Translation> = {
     curriculum: {
       about: {
         title: "Sobre Mim",
-        text: "Estudante de Engenharia de Computação focado em criar soluções de software inovadoras. Trago experiência internacional da Alemanha e uma base sólida em Ciência da Computação, além de habilidades práticas em desenvolvimento Full-stack, Docker, Ciência de Dados e Machine Learning. Busco aplicar minha experiência e minha visão nas áreas de Engenharia de Software ou Ciência de Dados.",
+        text: "Estudante de Engenharia de Computação focado em criar soluções de software inovadoras. Tenho internacional da Alemanha e uma base sólida em Ciência da Computação, além de habilidades práticas em desenvolvimento Full-stack, Docker, Ciência de Dados e Machine Learning. Busco aplicar minha experiência e visão nas áreas de Engenharia de Software ou Ciência de Dados.",
         location: "Salvador, Brasil 🇧🇷",
       },
       skills: {
