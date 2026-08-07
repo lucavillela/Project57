@@ -1,50 +1,121 @@
 [
   {
+    "id": 0,
+    "title": {
+      "en": "Latitude 12",
+      "pt": "Latitude 12"
+    },
+    "description": {
+      "en": "Website for a Trail Running and Mountain Biking event in Bahia. It was developed with Next.js, Node, Prisma and SQLite and it features complete CMS interface.",
+      "pt": "Site para um evento de Trail Running e Mountain Bike na Bahia. Foi desenvolvido com Next.js, Node, Prisma e SQLite e conta com uma interface de CMS completa."
+    },
+    "image": "/latitude12.png",
+    "link": "https://www.desafiolatitude12.com.br/",
+    "callToAction": {
+      "en": "Visit the website",
+      "pt": "Visitar o site"
+    }
+  },
+  {
     "id": 1,
-    "title": "Corretores Online",
-    "description": "Complete realtor social media platform, that connects real estate agents with clients. Corretoreson.com has profiles and realtime location and map integration (Google Maps API)",
+    "title": {
+      "en": "Corretores Online",
+      "pt": "Corretores Online"
+    },
+    "description": {
+      "en": "Complete realtor social media platform, that connects real estate agents with clients. Corretoreson.com has profiles and realtime location and map integration (Google Maps API)",
+      "pt": "Plataforma social completa que conecta corretores de imóveis a clientes. O Corretoreson.com tem perfis, localização em tempo real e integração com mapas (API do Google Maps)."
+    },
     "image": "/corretoresOnline.png",
     "link": "https://corretoreson.com/",
-    "callToAction": "Visit the website"
+    "callToAction": {
+      "en": "Visit the website",
+      "pt": "Visitar o site"
+    }
   },
   {
     "id": 2,
-    "title": "DadoEmCasa",
-    "description": "A simple but complete dice-rolling website for players of tabletop RPGs who don't have dice at home.",
+    "title": {
+      "en": "DadoEmCasa",
+      "pt": "DadoEmCasa"
+    },
+    "description": {
+      "en": "A simple but complete dice-rolling website for players of tabletop RPGs who don't have dice at home.",
+      "pt": "Um site de rolagem de dados para jogadores de RPG de mesa que não têm dados em casa."
+    },
     "image": "/dadoEmCasa.png",
     "link": "https://dadoemcasa.vercel.app/",
-    "callToAction": "Try it online"
+    "callToAction": {
+      "en": "Try it online",
+      "pt": "Acessar"
+    }
   },
   {
     "id": 4,
-    "title": "Pong in Processing",
-    "description": "Pong game made in Processing (Java)",
+    "title": {
+      "en": "Pong in Processing",
+      "pt": "Pong in Processing"
+    },
+    "description": {
+      "en": "Pong game made in Processing (Java)",
+      "pt": "Jogo Pong feito em Processing (Java)."
+    },
     "image": "/pong.png",
     "link": "https://github.com/lucavillela/Pong-Game-in-Processing",
-    "callToAction": "View repository"
+    "callToAction": {
+      "en": "View repository",
+      "pt": "Ver repositório"
+    }
   },
   {
     "id": 5,
-    "title": "Particle System in Processing",
-    "description": "Computational simulation developed in Processing Java to visualize the trajectory of a charged particle in a uniform electric field.",
+    "title": {
+      "en": "Particle System in Processing",
+      "pt": "Sistema de Partículas em Processing"
+    },
+    "description": {
+      "en": "Computational simulation developed in Processing Java to visualize the trajectory of a charged particle in a uniform electric field.",
+      "pt": "Simulação computacional desenvolvida em Processing (Java) para visualizar a trajetória de uma partícula carregada em um campo elétrico uniforme."
+    },
     "image": "/simulation.png",
     "link": "https://github.com/lucavillela/Particle-Simulation",
-    "callToAction": "View repository"
+    "callToAction": {
+      "en": "View repository",
+      "pt": "Ver repositório"
+    }
   },
   {
     "id": 6,
-    "title": "Pakistan Estate Predictor",
-    "description": "A machine learning model developed in Python to predict real estate info in Pakistan based on various features such as location, size, and amenities.",
+    "title": {
+      "en": "Pakistan Estate Predictor",
+      "pt": "Preditor de Imóveis no Paquistão"
+    },
+    "description": {
+      "en": "A machine learning model developed in Python to predict real estate info in Pakistan based on various features such as location, size, and amenities.",
+      "pt": "Um modelo de machine learning desenvolvido em Python para prever informações imobiliárias no Paquistão com base em características como localização, tamanho e comodidades."
+    },
     "image": "/pakistan.png",
     "link": "https://github.com/lucavillela/pakistan-estate-ml",
-    "callToAction": "View repository"
+    "callToAction": {
+      "en": "View repository",
+      "pt": "Ver repositório"
+    }
   },
   {
     "id": 7,
-    "title": "FPGA-based Fuzzy Diagnosis System for Heart Rate Monitoring",
-    "description": "A fuzzy logic-based system implemented on an FPGA to monitor heart rate and provide diagnostic insights based on the collected data.",
+    "title": {
+      "en": "FPGA-based Fuzzy Diagnosis System for Heart Rate Monitoring",
+      "pt": "Sistema de Diagnóstico Fuzzy em FPGA para Monitoramento de Frequência Cardíaca"
+    },
+    "description": {
+      "en": "A fuzzy logic-based system implemented on an FPGA to monitor heart rate and provide diagnostic insights based on the collected data.",
+      "pt": "Um sistema baseado em lógica fuzzy implementado em FPGA para monitorar a frequência cardíaca e fornecer diagnósticos a partir dos dados coletados."
+    },
     "image": "/fuzzyheart.png",
     "link": "FPGA-Based-Fuzzy-Diagnostic-System-for-Heart-Rate-Monitoring.pdf",
-    "callToAction": "View article"
+    "callToAction": {
+      "en": "View article",
+      "pt": "Ver artigo"
+    }
   }
 ]

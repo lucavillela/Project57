@@ -1,13 +1,26 @@
 "use client";
 
-export default function ScrollArrow() {
+type ScrollArrowProps = {
+  /** Id of the section to scroll to; falls back to the content wrapper. */
+  targetId?: string;
+};
+
+export default function ScrollArrow({
+  targetId = "curriculum",
+}: ScrollArrowProps) {
+  const handleScroll = () => {
+    const target =
+      document.getElementById(targetId) ||
+      document.getElementById("content-section");
+    target?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
-    <div
+    <button
+      type="button"
+      aria-label="Scroll to content"
       className="animate-bounce-down cursor-pointer"
-      onClick={() => {
-        const curriculumSection = document.getElementById("curriculum");
-        curriculumSection?.scrollIntoView({ behavior: "smooth" });
-      }}
+      onClick={handleScroll}
     >
       <svg
         className="w-8 h-8 text-brand-cream"
@@ -23,6 +36,6 @@ export default function ScrollArrow() {
           d="M19 14l-7 7m0 0l-7-7m7 7V3"
         />
       </svg>
-    </div>
+    </button>
   );
 }

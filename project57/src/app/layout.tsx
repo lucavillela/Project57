@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Infant, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 const cormorant = Cormorant_Infant({
   subsets: ["latin"],
@@ -19,8 +20,8 @@ const sourceSerif = Source_Serif_4({
 
 export const metadata: Metadata = {
   title: {
-    default: "Luca Torres Villela | Web Portfolio",
-    template: "%s | Luca Torres Villela",
+    default: "Luca Villela | Web Portfolio",
+    template: "%s | Luca Villela",
   },
   description:
     "Computer Engineering undergraduate focused on creating innovative software solutions.",
@@ -29,13 +30,13 @@ export const metadata: Metadata = {
     "full-stack",
     "react",
     "next.js",
-    "Luca Torres Villela",
+    "Luca Villela",
     "software engineer",
     "datascience",
     "software developer",
   ],
-  authors: [{ name: "Luca Torres Villela" }],
-  creator: "Luca Torres Villela",
+  authors: [{ name: "Luca Villela" }],
+  creator: "Luca Villela",
   metadataBase: new URL("https://project57.com.br"),
   alternates: {
     canonical: "/",
@@ -47,22 +48,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://project57.com.br",
-    title: "Luca Torres Villela | Web Portfolio",
+    title: "Luca Villela | Web Portfolio",
     description:
       "Computer Engineering undergraduate focused on creating innovative software solutions.",
-    siteName: "Luca Torres Villela Portfolio",
+    siteName: "Luca Villela Portfolio",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Luca Torres Villela Portfolio",
+        alt: "Luca Villela Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Luca Torres Villela | Web Developer Portfolio",
+    title: "Luca Villela | Web Developer Portfolio",
     description:
       "Computer Engineering undergraduate focused on creating innovative software solutions.",
     images: ["/og-image.jpg"],
@@ -90,7 +91,7 @@ export default function RootLayout({
       <body
         className={`${cormorant.variable} ${sourceSerif.variable} antialiased`}
       >
-        {children}
+        <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
   );

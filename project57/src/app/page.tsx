@@ -1,6 +1,6 @@
 "use client";
 
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 import MandalaBackground from "@/components/MandalaBackground";
 import Navbar from "@/components/Navbar";
 import Curriculum from "@/components/Curriculum";
@@ -8,9 +8,13 @@ import Projects from "@/components/Projects";
 import ScrollArrow from "@/components/ScrollArrow";
 import Image from "next/image";
 import Button from "@/components/Button";
+import ContactModal from "@/components/ContactModal";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("curriculum");
+  const [isContactOpen, setIsContactOpen] = useState(false);
+  const { t } = useLanguage();
 
   const handleSectionChange = (section: string) => {
     setActiveSection(section);
@@ -26,6 +30,9 @@ export default function Home() {
       }, 50);
     });
   };
+
+  const sectionTitle =
+    activeSection === "projects" ? t.sections.projects : t.sections.curriculum;
 
   return (
     <main className="min-h-screen">
@@ -49,22 +56,28 @@ export default function Home() {
             Project 57
           </h1>
           <p className="font-[300] text-3xl text-brand-cream italic text-shadow-xs animate-fadeInUp max-sm:text-[20px] mb-8">
-            A web portfolio by <br /> Luca Torres Villela
+            {t.hero.byline} <br /> {t.hero.name}
           </p>
 
-          <div className="flex flex-row items-center justify-center gap-10 animate-fadeInUp max-sm:gap-2">
+          <div className="flex flex-col items-center gap-5 animate-fadeInUp max-sm:gap-4">
+            <div className="flex flex-row items-center justify-center gap-10 max-sm:gap-2">
+              <Button
+                label={t.nav.curriculum}
+                onClick={() => handleSectionChange("curriculum")}
+              />
+              <Button
+                label={t.nav.projects}
+                onClick={() => handleSectionChange("projects")}
+              />
+            </div>
             <Button
-              label="Curriculum"
-              onClick={() => handleSectionChange("curriculum")}
-            />
-            <Button
-              label="Projects"
-              onClick={() => handleSectionChange("projects")}
+              label={t.nav.contact}
+              onClick={() => setIsContactOpen(true)}
             />
           </div>
 
           <div className="absolute bottom-17 w-full flex justify-center left-0">
-            <ScrollArrow />
+            <ScrollArrow targetId={activeSection} />
           </div>
         </div>
       </div>
@@ -82,12 +95,17 @@ export default function Home() {
         />
         <div className="flex flex-col items-center justify-center h-full w-fit min-sm: bg-brand-cream rounded-t-3xl -mt-5 relative z-20 px-8 py-8 max-sm:px-3 max-sm:w-full min-h-[500px]">
           <h1 className="font-cormorant text-[60px] font-bold text-brand-darkgreen mb-6 max-sm:text-[40px] max-sm:text-center capitalize">
-            {activeSection}
+            {sectionTitle}
           </h1>
 
           {activeSection === "curriculum" ? <Curriculum /> : <Projects />}
         </div>
       </div>
+
+      <ContactModal
+        isOpen={isContactOpen}
+        onClose={() => setIsContactOpen(false)}
+      />
     </main>
   );
 }
