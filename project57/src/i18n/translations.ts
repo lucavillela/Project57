@@ -195,7 +195,7 @@ export const translations: Record<Lang, Translation> = {
       language: "Idioma",
     },
     hero: {
-      byline: "Um portfólio web por",
+      byline: "Portfólio web por",
       name: "Luca Villela",
     },
     sections: {
